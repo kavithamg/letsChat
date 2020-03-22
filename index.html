@@ -25,7 +25,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script>
-            var socket = io.connect('https://letschatwithkavi.herokuapp.com/');
+            var socket = io.connect('https://letschatwithanyone.herokuapp.com/');
             $(()=>{
                 $("#send").click(()=>{
                     var message = {name: $("#name").val(), message: $("#message").val()}
@@ -43,14 +43,14 @@
                 $("#messages").append(`<h4> ${message.name}</h4> <p>${message.message}</p>`)
             }
             function getMessages(){
-                $.get('https://letschatwithkavi.herokuapp.com/messages',(data)=>{
+                $.get('https://letschatwithanyone.herokuapp.com/messages',(data)=>{
                     data.forEach((message) => {
                         addMessage(message)
                     });
                 })
             }
             function postMessages(message){
-                $.post('https://letschatwithkavi.herokuapp.com/messages', message)
+                $.post('https://letschatwithanyone.herokuapp.com/messages', message)
                 }
         </script>
     </body>
